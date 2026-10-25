@@ -1,0 +1,6 @@
+interface:
+  display_name: "Academic Workbench"
+  short_description: "跨学段跨专业的作业、论文、实验、CAD、编程与答辩工作台"
+  default_prompt: "Use $academic-workbench to complete this assignment with source tracking, coupled deliverables, and evidence-based verification."
+policy:
+  allow_implicit_invocation: true
