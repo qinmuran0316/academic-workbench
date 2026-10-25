@@ -4,6 +4,24 @@
 
 材料充分时直接完成可供检查修改的成品；只有会改变结果的重大缺口才提问。用户要求自主完成时，记录合理假设并持续推进。
 
+## AI 安装（复制给 Codex）
+
+把下面这段话直接发给 Codex：
+
+```text
+请从 https://github.com/qinmuran0316/academic-workbench 下载这个 Skill，安装到我的 Codex。请优先使用 $skill-installer；Skill 位于仓库根目录，安装名称为 academic-workbench。请保留完整的 SKILL.md、references、scripts 和 agents，安装后检查文件完整性，告诉我安装位置和调用方式。
+```
+
+如果 AI 需要安装器参数，对应 `--repo qinmuran0316/academic-workbench --path . --name academic-workbench`。安装到当前 Codex 实际使用的技能目录；若已有同名技能，先比较现有版本，按本次授权决定是否更新。
+
+仓库为私有时，安装环境需要已登录有访问权限的 GitHub 账号。安装成功后可这样调用：
+
+```text
+$academic-workbench 按附件题目和评分标准完成作业，输出可编辑成果和检查记录。
+```
+
+安装和调用机制参见 [Codex 官方技能文档](https://developers.openai.com/codex/skills)。
+
 ## 能做什么
 
 | 任务 | 工作内容 |
