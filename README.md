@@ -4,23 +4,66 @@
 
 材料充分时直接完成可供检查修改的成品；只有会改变结果的重大缺口才提问。用户要求自主完成时，记录合理假设并持续推进。
 
-## AI 安装（复制给 Codex）
+## AI 安装（常见 AI 工具）
 
-把下面这段话直接发给 Codex：
+Codex、Claude Code、Claude、WorkBuddy、豆包等均提供对应的可复制指令，完整内容见 [AI 安装指南](AI安装指南.md)。Skill 位于仓库根目录，名称为 `academic-workbench`。仓库为私有时，需要安装环境有 GitHub 访问权限，或由你下载后上传文件。
 
-```text
-请从 https://github.com/qinmuran0316/academic-workbench 下载这个 Skill，安装到我的 Codex。请优先使用 $skill-installer；Skill 位于仓库根目录，安装名称为 academic-workbench。请保留完整的 SKILL.md、references、scripts 和 agents，安装后检查文件完整性，告诉我安装位置和调用方式。
-```
-
-如果 AI 需要安装器参数，对应 `--repo qinmuran0316/academic-workbench --path . --name academic-workbench`。安装到当前 Codex 实际使用的技能目录；若已有同名技能，先比较现有版本，按本次授权决定是否更新。
-
-仓库为私有时，安装环境需要已登录有访问权限的 GitHub 账号。安装成功后可这样调用：
+不知道当前工具适合哪种方式时，可以直接发：
 
 ```text
-$academic-workbench 按附件题目和评分标准完成作业，输出可编辑成果和检查记录。
+请从 https://github.com/qinmuran0316/academic-workbench 获取这个作业与论文 Skill，并配置到我当前使用的 AI 工具。先检查当前版本的技能导入、文件和执行能力；支持原生 Skill 时安装完整目录，需要上传时准备技能包并说明操作入口，否则读取“通用对话指令.md”作为当前对话规则。无法访问仓库时告诉我需要上传哪个文件。完成后说明配置方式、实际完成的步骤和调用方法。
 ```
 
-安装和调用机制参见 [Codex 官方技能文档](https://developers.openai.com/codex/skills)。
+### 按工具选择
+
+| AI 工具 | 配置方式与可复制指令 |
+|---|---|
+| Codex | [技能安装器](AI安装指南.md#codex) |
+| Claude Code | [个人或项目技能目录](AI安装指南.md#claude-code) |
+| Claude 网页版 / 桌面版 / Cowork | [自定义 Skill ZIP 上传](AI安装指南.md#claude) |
+| WorkBuddy | [准备技能包并上传导入](AI安装指南.md#workbuddy) |
+| 豆包 | [通用对话版 / 当前入口支持的智能体配置](AI安装指南.md#doubao) |
+| Cursor | [本地技能目录](AI安装指南.md#cursor) |
+| Windsurf / Cascade | [当前版本的技能目录](AI安装指南.md#windsurf) |
+| GitHub Copilot（VS Code） | [项目技能目录](AI安装指南.md#copilot) |
+| Gemini CLI | [CLI 技能安装](AI安装指南.md#gemini-cli) |
+| Gemini / Gems | [Gem 指令与材料配置](AI安装指南.md#gemini) |
+| ChatGPT | [按当前入口使用 Skill 或通用指令](AI安装指南.md#chatgpt) |
+| DeepSeek | [通用对话版](AI安装指南.md#deepseek) |
+| Kimi | [通用对话版](AI安装指南.md#kimi) |
+| 通义千问 / Qwen | [通用对话版](AI安装指南.md#qwen) |
+
+### Codex
+
+```text
+请使用 $skill-installer，从 https://github.com/qinmuran0316/academic-workbench 下载并安装这个 Skill 到我的 Codex。Skill 位于仓库根目录，安装名称为 academic-workbench，请保留完整目录并检查安装结果。
+```
+
+### Claude Code
+
+```text
+请从 https://github.com/qinmuran0316/academic-workbench 下载这个 Skill，安装到我的 Claude Code 个人技能目录 ~/.claude/skills/academic-workbench。仓库根目录就是 Skill，请保留 SKILL.md、references、scripts 和 agents，完成后检查文件并说明如何使用 /academic-workbench。
+```
+
+### Claude 网页版 / 桌面版
+
+```text
+请从 https://github.com/qinmuran0316/academic-workbench 获取这个 Skill，帮我准备可上传到 Claude 的技能 ZIP，说明 Customize > Skills 的上传步骤。若当前工具能实际操作上传，请在完成后核对技能列表；只能准备文件时，请明确说明还需我上传。无法访问仓库时，我可以提供文件。
+```
+
+### WorkBuddy
+
+```text
+请从 https://github.com/qinmuran0316/academic-workbench 获取这个 Skill，帮我配置到 WorkBuddy。请准备完整的本地技能包，按“技能 > 添加技能 > 上传技能”导入；若当前不能操作界面，请把技能包和所需操作交给我。导入后核对已安装列表和启用状态。
+```
+
+### 豆包
+
+```text
+请读取 https://github.com/qinmuran0316/academic-workbench 中的“通用对话指令.md”，按其中规则帮助我完成作业和论文。若链接无法读取，请让我粘贴内容或上传文件。请根据当前豆包入口支持的能力，提供智能体配置步骤或在当前对话中使用；完成后说明生效范围。
+```
+
+其他平台的独立指令、调用示例及官方依据见 [AI 安装指南](AI安装指南.md)。原生安装、上传导入、对话中读取分别记录，实际文件生成和执行能力按当前环境检查。
 
 ## 能做什么
 
